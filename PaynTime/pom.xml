@@ -28,7 +28,7 @@
 		<url />
 	</scm>
 	<properties>
-		<java.version>24</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -55,9 +55,8 @@
 
 		<!-- Dialecto para SQLite + Hibernate -->
 		<dependency>
-			<groupId>com.github.gwenn</groupId>
-			<artifactId>sqlite-dialect</artifactId>
-			<version>0.1.2</version>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-community-dialects</artifactId>
 		</dependency>
 
 		<dependency>
@@ -71,6 +70,13 @@
 			<artifactId>javafx-fxml</artifactId>
 			<version>21.0.2</version>
 		</dependency>
+
+		<!-- hashear password dependencia-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
 	</dependencies>
 
 
