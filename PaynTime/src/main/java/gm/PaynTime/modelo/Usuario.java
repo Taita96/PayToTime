@@ -36,14 +36,13 @@ public class Usuario {
     @Column(nullable = false, unique = true)
     private String nombreUsuario;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String apellido;
 
-    @Column(nullable = false)
-    
+    //@Column(nullable = false)
     private BigDecimal saldo = BigDecimal.ZERO; // Manejo seguro de dinero
     
 //    @CreationTimestamp
