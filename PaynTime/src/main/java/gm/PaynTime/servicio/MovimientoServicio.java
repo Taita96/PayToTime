@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import gm.PaynTime.modelo.Movimiento;
+import gm.PaynTime.modelo.Usuario;
 import gm.PaynTime.repositorio.MovimientosRepositorio;
 
 @Service
@@ -33,6 +34,11 @@ public class MovimientoServicio implements IMovimientoServicio{
 	public void EliminarMovimientos(Movimiento movimiento) {
 		movimientoRespositorio.delete(movimiento);
 		
+	}
+
+	@Override
+	public List<Movimiento> listarMovientos(Usuario session) {
+		return movimientoRespositorio.findByUsuario(session);
 	}
 	
 }

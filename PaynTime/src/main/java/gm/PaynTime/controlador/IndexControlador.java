@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 @Component
 public class IndexControlador implements Initializable {
@@ -36,18 +37,25 @@ public class IndexControlador implements Initializable {
     @FXML
     public void actionEvent(ActionEvent e) {
         Object evt = e.getSource();
+        Stage stage = (Stage) containerForm.getScene().getWindow();
 
+        
         if (evt.equals(btnSignIn)) {
             signInForm.setVisible(true);
+            stage.setTitle("Inicio Sesión");
             signUpForm.setVisible(false);
         } else if (evt.equals(btnSignUp)) {
             signUpForm.setVisible(true);
+            stage.setTitle("Registrar");
             signInForm.setVisible(false);
         }
     }
+    
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         try {
             // Cargar los formularios con el loader de Spring
             signInForm = fxmlLoader.load("signIn.fxml");
@@ -58,6 +66,7 @@ public class IndexControlador implements Initializable {
             // Mostrar solo el formulario de Sign In por defecto
             signInForm.setVisible(true);
             signUpForm.setVisible(false);
+
 
         } catch (IOException ex) {
             LOGGER.error("Error al cargar formulario", ex);

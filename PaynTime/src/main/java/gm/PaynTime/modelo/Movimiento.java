@@ -1,13 +1,14 @@
 package gm.PaynTime.modelo;
 
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+//import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,11 +26,17 @@ public class Movimiento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private LocalDateTime fecha;
+	private LocalDate fecha;
 	private String tipo;
+	private double monto;
+	private String Descripcion;
+	private int usuarioLogeado;
 	
-	@Lob
-	private byte[] foto;
+	
+//	@Column(name = "foto", columnDefinition = "BLOB")
+//	private byte[] foto;
+	
+	private String rutaFoto;
 	
 	@ManyToOne
 	private Usuario usuario;

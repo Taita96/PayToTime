@@ -24,13 +24,12 @@ public class PaynTimeFX extends Application {
 	@Override
 	public void start(Stage stage) throws IOException {
 		FXMLLoader loader = new FXMLLoader(PaynTimeApplication.class.getResource("/templates/index.fxml"));
-
 		loader.setControllerFactory(applicantionContext::getBean);
 
 		Scene scene = new Scene(loader.load());
 //		scene.getStylesheets().add(getClass().getResource("/css/dark-theme.css").toExternalForm());
 		stage.setScene(scene);
-
+		stage.setTitle("Iniciar Sesion");
 		stage.show();
 
 	}

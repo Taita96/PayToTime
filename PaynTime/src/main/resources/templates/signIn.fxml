@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="482.0" spacing="10.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="411.0" prefWidth="482.0" spacing="10.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gm.PaynTime.controlador.signIn.SignInFormController">
    <children>
       <Label text="Iniciar Sesión">
          <font>
@@ -37,19 +36,19 @@
             </Label>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <PasswordField fx:id="txtPasswordSignIn" />
+                  <PasswordField fx:id="txtPasswordSignIn" promptText="Ej: 1234" />
                   <TextField fx:id="txtPasswordSignInMask" promptText="Ej: 1234" />
                </children>
             </StackPane>
             <CheckBox fx:id="checkViewPassSignIn" mnemonicParsing="false" text="Ver Contraseña" />
             <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button fx:id="btnSignIn" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #111; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Ingresar" textFill="WHITE">
+                  <Button fx:id="btnSignIn" mnemonicParsing="false" onAction="#onSingInAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #111; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="Ingresar" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnClean" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #2a8a85; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="Limpiar" textFill="WHITE">
+                  <Button fx:id="btnClean" mnemonicParsing="false" onAction="#onCleanAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #2a8a85; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="Limpiar" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>

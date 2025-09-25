@@ -1,5 +1,6 @@
 package gm.PaynTime.servicio;
 
+import gm.PaynTime.exepciones.UsuarioNoExisteException;
 import gm.PaynTime.exepciones.UsuarioYaExisteException;
 import gm.PaynTime.modelo.Usuario;
 
@@ -16,5 +17,9 @@ public interface IUsuarioServicio {
 	
 	public Usuario buscarPorNombreUsuario(String nombreUsuario);
 	
-	public boolean validarLogin(String emailONombreUsuario, String password);
+	public Usuario buscarPorNombreUsuarioOEmil(String nombreUsuario,String filter);
+	
+	public boolean validarLogin(String emailONombreUsuario, String password) throws UsuarioNoExisteException;
+	
+	public Usuario login(String username, String password);
 }
